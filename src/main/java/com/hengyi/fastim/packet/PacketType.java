@@ -9,6 +9,7 @@ package com.hengyi.fastim.packet;
  * Use：消息包类型
  */
 public class PacketType {
+	public static final int DEFAULT_TYPE = 0;
     public static final int SINGE_CHAT = 1;
     public static final int GROUP_CHAT = 2;
 }
