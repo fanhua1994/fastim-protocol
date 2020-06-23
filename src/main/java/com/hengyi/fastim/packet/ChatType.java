@@ -6,9 +6,9 @@ package com.hengyi.fastim.packet;
  * Author：dongzp
  * Email：90fanhua@gmail.com
  * Project：im-server
- * Use：消息包类型
+ * Use：聊天类型
  */
-public class PacketType {
+public class ChatType {
 	public static final int DEFAULT_TYPE = 0;
     public static final int SINGE_CHAT = 1;
     public static final int GROUP_CHAT = 2;

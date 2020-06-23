@@ -2,7 +2,7 @@ package com.hengyi.fastim.packet;
 
 
 /**
- * Flag
+ * Flag状态
  * @author dongzp
  *
  */
