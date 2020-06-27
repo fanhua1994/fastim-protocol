@@ -9,7 +9,10 @@ package com.hengyi.fastim.packet;
  * Use：聊天类型
  */
 public class ChatType {
+    /** 默认消息 */
 	public static final int DEFAULT_TYPE = 0;
+    /** 单聊消息 */
     public static final int SINGE_CHAT = 1;
+    /** 群聊消息 */
     public static final int GROUP_CHAT = 2;
 }
