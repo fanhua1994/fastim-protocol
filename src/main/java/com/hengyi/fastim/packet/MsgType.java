@@ -8,12 +8,8 @@ public class MsgType {
     public final static int LOGIN_TYPE = 1000;
     /** 退出请求 */
     public final static int LOGOUT_TYPE = 2000;
-    /** 发送文本聊天 */
-    public final static int CHAT_TEXT_TYPE = 3000;
-    /** 发送附件消息 */
-    public final static int CHAT_ACCESSORY_TYPE = 4000;
-    /** 通话消息（语音、视频） */
-    public final static int CHAT_CALL_TYPE = 10000;
+    /** 聊天消息 */
+    public final static int CHAT_TYPE = 3000;
     /** 心跳包请求 */
     public final static int HERAT_TYPE = 5000;
     /** 好友上线下线通知 */
