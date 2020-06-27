@@ -7,7 +7,7 @@ package com.hengyi.fastim.packet;
 
 public class VersionType {
     /** 当前版本 */
-    public final static int NOW_VERSION = 3;
+    public final static int NOW_VERSION = 4;
     /** 最低容忍版本 */
-    public final static int MIN_TOLERATE_VERSION = 1;
+    public final static int MIN_TOLERATE_VERSION = 4;
 }
