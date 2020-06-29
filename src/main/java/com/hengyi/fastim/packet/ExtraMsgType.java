@@ -25,5 +25,7 @@ public class ExtraMsgType {
     public final static int MSG_VOICE_CALL_TYPE = 8;
     /** 视频通话 */
     public final static int MSG_VIDEO_CALL_TYPE = 9;
+    /** 位置消息 */
+    public final static int MSG_LOCATION_TYPE = 10;
 
 }

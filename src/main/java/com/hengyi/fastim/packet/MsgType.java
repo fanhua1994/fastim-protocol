@@ -19,6 +19,8 @@ public class MsgType {
     /** 添加好友请求 */
     public final static int ADD_CONTACT_REQUEST_TYPE = 8000;
     /**（文本、附件）消息发送回执消息 */
-    public final static int MSG_ACK_TYPE = 9000;
+    public final static int MSG_SNED_ACK_TYPE = 9000;
+    /**（文本、附件）消息已读回执消息 */
+    public final static int MSG_READ_ACK_TYPE = 10000;
 
 }
