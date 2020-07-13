@@ -15,4 +15,6 @@ public class ChatType {
     public static final int SINGE_CHAT = 1;
     /** 群聊消息 */
     public static final int GROUP_CHAT = 2;
+    /** 推送消息 */
+    public static final int PUSH_TYPE = 3;
 }

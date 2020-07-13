@@ -1,26 +1,26 @@
 package com.hengyi.fastim.packet;
 /**
  * @author dongzp
- * 消息包类型
+ * 消息类型
  */
 public class MsgType {
     /** 登录请求 */
-    public final static int LOGIN_TYPE = 1000;
+    public final static int LOGIN_TYPE = 10;
     /** 退出请求 */
-    public final static int LOGOUT_TYPE = 2000;
+    public final static int LOGOUT_TYPE = 20;
     /** 聊天消息 */
-    public final static int CHAT_TYPE = 3000;
+    public final static int CHAT_TYPE = 30;
     /** 心跳包请求 */
-    public final static int HERAT_TYPE = 5000;
+    public final static int HERAT_TYPE = 40;
     /** 好友上线下线通知 */
-    public final static int CONTACT_STATUS_CHANGE_TYPE = 6000;
+    public final static int CONTACT_STATUS_CHANGE_TYPE = 50;
     /** 主动检查是否有离线消息 */
-    public final static int CHECK_OUTLINE_MESSAGE_TYPE = 7000;
+    public final static int CHECK_OUTLINE_MESSAGE_TYPE = 60;
     /** 添加好友请求 */
-    public final static int ADD_CONTACT_REQUEST_TYPE = 8000;
+    public final static int ADD_CONTACT_REQUEST_TYPE = 70;
     /**（文本、附件）消息发送回执消息 */
-    public final static int MSG_SNED_ACK_TYPE = 9000;
+    public final static int MSG_SNED_ACK_TYPE = 80;
     /**（文本、附件）消息已读回执消息 */
-    public final static int MSG_READ_ACK_TYPE = 10000;
+    public final static int MSG_READ_ACK_TYPE = 90;
 
 }

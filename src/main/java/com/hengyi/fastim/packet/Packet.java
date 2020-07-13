@@ -37,9 +37,9 @@ public final class Packet {
     int getType();
 
     /**
-     * <code>int32 packetType = 4;</code>
+     * <code>int32 chatType = 4;</code>
      */
-    int getPacketType();
+    int getChatType();
 
     /**
      * <code>int32 extraType = 5;</code>
@@ -106,7 +106,7 @@ public final class Packet {
       msgId_ = "";
       flag_ = 0;
       type_ = 0;
-      packetType_ = 0;
+      chatType_ = 0;
       extraType_ = 0;
       version_ = 0;
       content_ = "";
@@ -158,7 +158,7 @@ public final class Packet {
             }
             case 32: {
 
-              packetType_ = input.readInt32();
+              chatType_ = input.readInt32();
               break;
             }
             case 40: {
@@ -270,13 +270,13 @@ public final class Packet {
       return type_;
     }
 
-    public static final int PACKETTYPE_FIELD_NUMBER = 4;
-    private int packetType_;
+    public static final int CHATTYPE_FIELD_NUMBER = 4;
+    private int chatType_;
     /**
-     * <code>int32 packetType = 4;</code>
+     * <code>int32 chatType = 4;</code>
      */
-    public int getPacketType() {
-      return packetType_;
+    public int getChatType() {
+      return chatType_;
     }
 
     public static final int EXTRATYPE_FIELD_NUMBER = 5;
@@ -454,8 +454,8 @@ public final class Packet {
       if (type_ != 0) {
         output.writeInt32(3, type_);
       }
-      if (packetType_ != 0) {
-        output.writeInt32(4, packetType_);
+      if (chatType_ != 0) {
+        output.writeInt32(4, chatType_);
       }
       if (extraType_ != 0) {
         output.writeInt32(5, extraType_);
@@ -493,9 +493,9 @@ public final class Packet {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(3, type_);
       }
-      if (packetType_ != 0) {
+      if (chatType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, packetType_);
+          .computeInt32Size(4, chatType_);
       }
       if (extraType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -539,8 +539,8 @@ public final class Packet {
           == other.getFlag());
       result = result && (getType()
           == other.getType());
-      result = result && (getPacketType()
-          == other.getPacketType());
+      result = result && (getChatType()
+          == other.getChatType());
       result = result && (getExtraType()
           == other.getExtraType());
       result = result && (getVersion()
@@ -569,8 +569,8 @@ public final class Packet {
       hash = (53 * hash) + getFlag();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType();
-      hash = (37 * hash) + PACKETTYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getPacketType();
+      hash = (37 * hash) + CHATTYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getChatType();
       hash = (37 * hash) + EXTRATYPE_FIELD_NUMBER;
       hash = (53 * hash) + getExtraType();
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
@@ -707,7 +707,7 @@ public final class Packet {
 
         type_ = 0;
 
-        packetType_ = 0;
+        chatType_ = 0;
 
         extraType_ = 0;
 
@@ -746,7 +746,7 @@ public final class Packet {
         result.msgId_ = msgId_;
         result.flag_ = flag_;
         result.type_ = type_;
-        result.packetType_ = packetType_;
+        result.chatType_ = chatType_;
         result.extraType_ = extraType_;
         result.version_ = version_;
         result.content_ = content_;
@@ -804,8 +804,8 @@ public final class Packet {
         if (other.getType() != 0) {
           setType(other.getType());
         }
-        if (other.getPacketType() != 0) {
-          setPacketType(other.getPacketType());
+        if (other.getChatType() != 0) {
+          setChatType(other.getChatType());
         }
         if (other.getExtraType() != 0) {
           setExtraType(other.getExtraType());
@@ -976,28 +976,28 @@ public final class Packet {
         return this;
       }
 
-      private int packetType_ ;
+      private int chatType_ ;
       /**
-       * <code>int32 packetType = 4;</code>
+       * <code>int32 chatType = 4;</code>
        */
-      public int getPacketType() {
-        return packetType_;
+      public int getChatType() {
+        return chatType_;
       }
       /**
-       * <code>int32 packetType = 4;</code>
+       * <code>int32 chatType = 4;</code>
        */
-      public Builder setPacketType(int value) {
+      public Builder setChatType(int value) {
         
-        packetType_ = value;
+        chatType_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 packetType = 4;</code>
+       * <code>int32 chatType = 4;</code>
        */
-      public Builder clearPacketType() {
+      public Builder clearChatType() {
         
-        packetType_ = 0;
+        chatType_ = 0;
         onChanged();
         return this;
       }
@@ -1392,11 +1392,11 @@ public final class Packet {
       descriptor;
   static {
     String[] descriptorData = {
-      "\n\014packet.proto\"\252\001\n\003msg\022\r\n\005msgId\030\001 \001(\t\022\014\n" +
-      "\004flag\030\002 \001(\005\022\014\n\004type\030\003 \001(\005\022\022\n\npacketType\030" +
-      "\004 \001(\005\022\021\n\textraType\030\005 \001(\005\022\017\n\007version\030\006 \001(" +
-      "\005\022\017\n\007content\030\007 \001(\t\022\014\n\004send\030\010 \001(\t\022\017\n\007rece" +
-      "ive\030\t \001(\t\022\020\n\010extraMsg\030\n \001(\tb\006proto3"
+      "\n\014packet.proto\"\250\001\n\003msg\022\r\n\005msgId\030\001 \001(\t\022\014\n" +
+      "\004flag\030\002 \001(\005\022\014\n\004type\030\003 \001(\005\022\020\n\010chatType\030\004 " +
+      "\001(\005\022\021\n\textraType\030\005 \001(\005\022\017\n\007version\030\006 \001(\005\022" +
+      "\017\n\007content\030\007 \001(\t\022\014\n\004send\030\010 \001(\t\022\017\n\007receiv" +
+      "e\030\t \001(\t\022\020\n\010extraMsg\030\n \001(\tb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1415,7 +1415,7 @@ public final class Packet {
     internal_static_msg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_msg_descriptor,
-        new String[] { "MsgId", "Flag", "Type", "PacketType", "ExtraType", "Version", "Content", "Send", "Receive", "ExtraMsg", });
+        new String[] { "MsgId", "Flag", "Type", "ChatType", "ExtraType", "Version", "Content", "Send", "Receive", "ExtraMsg", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
