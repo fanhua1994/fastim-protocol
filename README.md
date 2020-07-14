@@ -11,4 +11,4 @@
 > 新增已读回执
 
 #### 20200713
-> 修改packetType为chatType
+> 修改packetType为chatType ，send为from  receive为to
