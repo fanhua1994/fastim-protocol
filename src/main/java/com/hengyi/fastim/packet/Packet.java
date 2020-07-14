@@ -62,24 +62,24 @@ public final class Packet {
         getContentBytes();
 
     /**
-     * <code>string send = 8;</code>
+     * <code>string from = 8;</code>
      */
-    String getSend();
+    String getFrom();
     /**
-     * <code>string send = 8;</code>
+     * <code>string from = 8;</code>
      */
     com.google.protobuf.ByteString
-        getSendBytes();
+        getFromBytes();
 
     /**
-     * <code>string receive = 9;</code>
+     * <code>string to = 9;</code>
      */
-    String getReceive();
+    String getTo();
     /**
-     * <code>string receive = 9;</code>
+     * <code>string to = 9;</code>
      */
     com.google.protobuf.ByteString
-        getReceiveBytes();
+        getToBytes();
 
     /**
      * <code>string extraMsg = 10;</code>
@@ -110,8 +110,8 @@ public final class Packet {
       extraType_ = 0;
       version_ = 0;
       content_ = "";
-      send_ = "";
-      receive_ = "";
+      from_ = "";
+      to_ = "";
       extraMsg_ = "";
     }
 
@@ -180,13 +180,13 @@ public final class Packet {
             case 66: {
               String s = input.readStringRequireUtf8();
 
-              send_ = s;
+              from_ = s;
               break;
             }
             case 74: {
               String s = input.readStringRequireUtf8();
 
-              receive_ = s;
+              to_ = s;
               break;
             }
             case 82: {
@@ -331,68 +331,68 @@ public final class Packet {
       }
     }
 
-    public static final int SEND_FIELD_NUMBER = 8;
-    private volatile Object send_;
+    public static final int FROM_FIELD_NUMBER = 8;
+    private volatile Object from_;
     /**
-     * <code>string send = 8;</code>
+     * <code>string from = 8;</code>
      */
-    public String getSend() {
-      Object ref = send_;
+    public String getFrom() {
+      Object ref = from_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
-        send_ = s;
+        from_ = s;
         return s;
       }
     }
     /**
-     * <code>string send = 8;</code>
+     * <code>string from = 8;</code>
      */
     public com.google.protobuf.ByteString
-        getSendBytes() {
-      Object ref = send_;
+        getFromBytes() {
+      Object ref = from_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (String) ref);
-        send_ = b;
+        from_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int RECEIVE_FIELD_NUMBER = 9;
-    private volatile Object receive_;
+    public static final int TO_FIELD_NUMBER = 9;
+    private volatile Object to_;
     /**
-     * <code>string receive = 9;</code>
+     * <code>string to = 9;</code>
      */
-    public String getReceive() {
-      Object ref = receive_;
+    public String getTo() {
+      Object ref = to_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
-        receive_ = s;
+        to_ = s;
         return s;
       }
     }
     /**
-     * <code>string receive = 9;</code>
+     * <code>string to = 9;</code>
      */
     public com.google.protobuf.ByteString
-        getReceiveBytes() {
-      Object ref = receive_;
+        getToBytes() {
+      Object ref = to_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (String) ref);
-        receive_ = b;
+        to_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -466,11 +466,11 @@ public final class Packet {
       if (!getContentBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, content_);
       }
-      if (!getSendBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, send_);
+      if (!getFromBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, from_);
       }
-      if (!getReceiveBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, receive_);
+      if (!getToBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, to_);
       }
       if (!getExtraMsgBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, extraMsg_);
@@ -508,11 +508,11 @@ public final class Packet {
       if (!getContentBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, content_);
       }
-      if (!getSendBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, send_);
+      if (!getFromBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, from_);
       }
-      if (!getReceiveBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, receive_);
+      if (!getToBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, to_);
       }
       if (!getExtraMsgBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, extraMsg_);
@@ -547,10 +547,10 @@ public final class Packet {
           == other.getVersion());
       result = result && getContent()
           .equals(other.getContent());
-      result = result && getSend()
-          .equals(other.getSend());
-      result = result && getReceive()
-          .equals(other.getReceive());
+      result = result && getFrom()
+          .equals(other.getFrom());
+      result = result && getTo()
+          .equals(other.getTo());
       result = result && getExtraMsg()
           .equals(other.getExtraMsg());
       return result;
@@ -577,10 +577,10 @@ public final class Packet {
       hash = (53 * hash) + getVersion();
       hash = (37 * hash) + CONTENT_FIELD_NUMBER;
       hash = (53 * hash) + getContent().hashCode();
-      hash = (37 * hash) + SEND_FIELD_NUMBER;
-      hash = (53 * hash) + getSend().hashCode();
-      hash = (37 * hash) + RECEIVE_FIELD_NUMBER;
-      hash = (53 * hash) + getReceive().hashCode();
+      hash = (37 * hash) + FROM_FIELD_NUMBER;
+      hash = (53 * hash) + getFrom().hashCode();
+      hash = (37 * hash) + TO_FIELD_NUMBER;
+      hash = (53 * hash) + getTo().hashCode();
       hash = (37 * hash) + EXTRAMSG_FIELD_NUMBER;
       hash = (53 * hash) + getExtraMsg().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -715,9 +715,9 @@ public final class Packet {
 
         content_ = "";
 
-        send_ = "";
+        from_ = "";
 
-        receive_ = "";
+        to_ = "";
 
         extraMsg_ = "";
 
@@ -750,8 +750,8 @@ public final class Packet {
         result.extraType_ = extraType_;
         result.version_ = version_;
         result.content_ = content_;
-        result.send_ = send_;
-        result.receive_ = receive_;
+        result.from_ = from_;
+        result.to_ = to_;
         result.extraMsg_ = extraMsg_;
         onBuilt();
         return result;
@@ -817,12 +817,12 @@ public final class Packet {
           content_ = other.content_;
           onChanged();
         }
-        if (!other.getSend().isEmpty()) {
-          send_ = other.send_;
+        if (!other.getFrom().isEmpty()) {
+          from_ = other.from_;
           onChanged();
         }
-        if (!other.getReceive().isEmpty()) {
-          receive_ = other.receive_;
+        if (!other.getTo().isEmpty()) {
+          to_ = other.to_;
           onChanged();
         }
         if (!other.getExtraMsg().isEmpty()) {
@@ -1123,140 +1123,140 @@ public final class Packet {
         return this;
       }
 
-      private Object send_ = "";
+      private Object from_ = "";
       /**
-       * <code>string send = 8;</code>
+       * <code>string from = 8;</code>
        */
-      public String getSend() {
-        Object ref = send_;
+      public String getFrom() {
+        Object ref = from_;
         if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           String s = bs.toStringUtf8();
-          send_ = s;
+          from_ = s;
           return s;
         } else {
           return (String) ref;
         }
       }
       /**
-       * <code>string send = 8;</code>
+       * <code>string from = 8;</code>
        */
       public com.google.protobuf.ByteString
-          getSendBytes() {
-        Object ref = send_;
+          getFromBytes() {
+        Object ref = from_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (String) ref);
-          send_ = b;
+          from_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string send = 8;</code>
+       * <code>string from = 8;</code>
        */
-      public Builder setSend(
+      public Builder setFrom(
           String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        send_ = value;
+        from_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string send = 8;</code>
+       * <code>string from = 8;</code>
        */
-      public Builder clearSend() {
+      public Builder clearFrom() {
         
-        send_ = getDefaultInstance().getSend();
+        from_ = getDefaultInstance().getFrom();
         onChanged();
         return this;
       }
       /**
-       * <code>string send = 8;</code>
+       * <code>string from = 8;</code>
        */
-      public Builder setSendBytes(
+      public Builder setFromBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        send_ = value;
+        from_ = value;
         onChanged();
         return this;
       }
 
-      private Object receive_ = "";
+      private Object to_ = "";
       /**
-       * <code>string receive = 9;</code>
+       * <code>string to = 9;</code>
        */
-      public String getReceive() {
-        Object ref = receive_;
+      public String getTo() {
+        Object ref = to_;
         if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           String s = bs.toStringUtf8();
-          receive_ = s;
+          to_ = s;
           return s;
         } else {
           return (String) ref;
         }
       }
       /**
-       * <code>string receive = 9;</code>
+       * <code>string to = 9;</code>
        */
       public com.google.protobuf.ByteString
-          getReceiveBytes() {
-        Object ref = receive_;
+          getToBytes() {
+        Object ref = to_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (String) ref);
-          receive_ = b;
+          to_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string receive = 9;</code>
+       * <code>string to = 9;</code>
        */
-      public Builder setReceive(
+      public Builder setTo(
           String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        receive_ = value;
+        to_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string receive = 9;</code>
+       * <code>string to = 9;</code>
        */
-      public Builder clearReceive() {
+      public Builder clearTo() {
         
-        receive_ = getDefaultInstance().getReceive();
+        to_ = getDefaultInstance().getTo();
         onChanged();
         return this;
       }
       /**
-       * <code>string receive = 9;</code>
+       * <code>string to = 9;</code>
        */
-      public Builder setReceiveBytes(
+      public Builder setToBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        receive_ = value;
+        to_ = value;
         onChanged();
         return this;
       }
@@ -1392,11 +1392,11 @@ public final class Packet {
       descriptor;
   static {
     String[] descriptorData = {
-      "\n\014packet.proto\"\250\001\n\003msg\022\r\n\005msgId\030\001 \001(\t\022\014\n" +
+      "\n\014packet.proto\"\243\001\n\003msg\022\r\n\005msgId\030\001 \001(\t\022\014\n" +
       "\004flag\030\002 \001(\005\022\014\n\004type\030\003 \001(\005\022\020\n\010chatType\030\004 " +
       "\001(\005\022\021\n\textraType\030\005 \001(\005\022\017\n\007version\030\006 \001(\005\022" +
-      "\017\n\007content\030\007 \001(\t\022\014\n\004send\030\010 \001(\t\022\017\n\007receiv" +
-      "e\030\t \001(\t\022\020\n\010extraMsg\030\n \001(\tb\006proto3"
+      "\017\n\007content\030\007 \001(\t\022\014\n\004from\030\010 \001(\t\022\n\n\002to\030\t \001" +
+      "(\t\022\020\n\010extraMsg\030\n \001(\tb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1415,7 +1415,7 @@ public final class Packet {
     internal_static_msg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_msg_descriptor,
-        new String[] { "MsgId", "Flag", "Type", "ChatType", "ExtraType", "Version", "Content", "Send", "Receive", "ExtraMsg", });
+        new String[] { "MsgId", "Flag", "Type", "ChatType", "ExtraType", "Version", "Content", "From", "To", "ExtraMsg", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
