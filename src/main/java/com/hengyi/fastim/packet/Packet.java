@@ -92,9 +92,9 @@ public final class Packet {
         getExtraMsgBytes();
 
     /**
-     * <code>int64 timestamp = 11;</code>
+     * <code>int64 time = 11;</code>
      */
-    long getTimestamp();
+    long getTime();
   }
   /**
    * Protobuf type {@code msg}
@@ -118,7 +118,7 @@ public final class Packet {
       from_ = "";
       to_ = "";
       extraMsg_ = "";
-      timestamp_ = 0L;
+      time_ = 0L;
     }
 
     @Override
@@ -203,7 +203,7 @@ public final class Packet {
             }
             case 88: {
 
-              timestamp_ = input.readInt64();
+              time_ = input.readInt64();
               break;
             }
           }
@@ -444,13 +444,13 @@ public final class Packet {
       }
     }
 
-    public static final int TIMESTAMP_FIELD_NUMBER = 11;
-    private long timestamp_;
+    public static final int TIME_FIELD_NUMBER = 11;
+    private long time_;
     /**
-     * <code>int64 timestamp = 11;</code>
+     * <code>int64 time = 11;</code>
      */
-    public long getTimestamp() {
-      return timestamp_;
+    public long getTime() {
+      return time_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -495,8 +495,8 @@ public final class Packet {
       if (!getExtraMsgBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, extraMsg_);
       }
-      if (timestamp_ != 0L) {
-        output.writeInt64(11, timestamp_);
+      if (time_ != 0L) {
+        output.writeInt64(11, time_);
       }
     }
 
@@ -540,9 +540,9 @@ public final class Packet {
       if (!getExtraMsgBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, extraMsg_);
       }
-      if (timestamp_ != 0L) {
+      if (time_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(11, timestamp_);
+          .computeInt64Size(11, time_);
       }
       memoizedSize = size;
       return size;
@@ -580,8 +580,8 @@ public final class Packet {
           .equals(other.getTo());
       result = result && getExtraMsg()
           .equals(other.getExtraMsg());
-      result = result && (getTimestamp()
-          == other.getTimestamp());
+      result = result && (getTime()
+          == other.getTime());
       return result;
     }
 
@@ -612,9 +612,9 @@ public final class Packet {
       hash = (53 * hash) + getTo().hashCode();
       hash = (37 * hash) + EXTRAMSG_FIELD_NUMBER;
       hash = (53 * hash) + getExtraMsg().hashCode();
-      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+      hash = (37 * hash) + TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTimestamp());
+          getTime());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -753,7 +753,7 @@ public final class Packet {
 
         extraMsg_ = "";
 
-        timestamp_ = 0L;
+        time_ = 0L;
 
         return this;
       }
@@ -787,7 +787,7 @@ public final class Packet {
         result.from_ = from_;
         result.to_ = to_;
         result.extraMsg_ = extraMsg_;
-        result.timestamp_ = timestamp_;
+        result.time_ = time_;
         onBuilt();
         return result;
       }
@@ -864,8 +864,8 @@ public final class Packet {
           extraMsg_ = other.extraMsg_;
           onChanged();
         }
-        if (other.getTimestamp() != 0L) {
-          setTimestamp(other.getTimestamp());
+        if (other.getTime() != 0L) {
+          setTime(other.getTime());
         }
         onChanged();
         return this;
@@ -1368,28 +1368,28 @@ public final class Packet {
         return this;
       }
 
-      private long timestamp_ ;
+      private long time_ ;
       /**
-       * <code>int64 timestamp = 11;</code>
+       * <code>int64 time = 11;</code>
        */
-      public long getTimestamp() {
-        return timestamp_;
+      public long getTime() {
+        return time_;
       }
       /**
-       * <code>int64 timestamp = 11;</code>
+       * <code>int64 time = 11;</code>
        */
-      public Builder setTimestamp(long value) {
+      public Builder setTime(long value) {
         
-        timestamp_ = value;
+        time_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 timestamp = 11;</code>
+       * <code>int64 time = 11;</code>
        */
-      public Builder clearTimestamp() {
+      public Builder clearTime() {
         
-        timestamp_ = 0L;
+        time_ = 0L;
         onChanged();
         return this;
       }
@@ -1456,12 +1456,12 @@ public final class Packet {
       descriptor;
   static {
     String[] descriptorData = {
-      "\n\014packet.proto\"\266\001\n\003msg\022\r\n\005msgId\030\001 \001(\t\022\014\n" +
+      "\n\014packet.proto\"\261\001\n\003msg\022\r\n\005msgId\030\001 \001(\t\022\014\n" +
       "\004flag\030\002 \001(\005\022\014\n\004type\030\003 \001(\005\022\020\n\010chatType\030\004 " +
       "\001(\005\022\021\n\textraType\030\005 \001(\005\022\017\n\007version\030\006 \001(\005\022" +
       "\017\n\007content\030\007 \001(\t\022\014\n\004from\030\010 \001(\t\022\n\n\002to\030\t \001" +
-      "(\t\022\020\n\010extraMsg\030\n \001(\t\022\021\n\ttimestamp\030\013 \001(\003b" +
-      "\006proto3"
+      "(\t\022\020\n\010extraMsg\030\n \001(\t\022\014\n\004time\030\013 \001(\003b\006prot" +
+      "o3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1480,7 +1480,7 @@ public final class Packet {
     internal_static_msg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_msg_descriptor,
-        new String[] { "MsgId", "Flag", "Type", "ChatType", "ExtraType", "Version", "Content", "From", "To", "ExtraMsg", "Timestamp", });
+        new String[] { "MsgId", "Flag", "Type", "ChatType", "ExtraType", "Version", "Content", "From", "To", "ExtraMsg", "Time", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
