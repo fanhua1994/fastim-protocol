@@ -12,3 +12,6 @@
 
 #### 20200713
 > 修改packetType为chatType ，send为from  receive为to
+
+### 20200802
+> 新增时间戳字段
