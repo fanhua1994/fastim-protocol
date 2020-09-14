@@ -29,5 +29,7 @@ public class ExtraMsgType {
     public final static int MSG_LOCATION_TYPE = 10;
     /** 名片消息 */
     public final static int MSG_BUSINESS_CARD_TYPE = 11;
+    /** 系统消息 */
+    public final static int MSG_SYSTEM_TYPE = 12;
 
 }

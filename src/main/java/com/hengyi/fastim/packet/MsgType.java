@@ -24,5 +24,6 @@ public class MsgType {
     public final static int MSG_SNED_ACK_TYPE = 80;
     /**（文本、附件）消息已读回执消息 */
     public final static int MSG_READ_ACK_TYPE = 90;
-
+    /** 系统通知消息 （展示到会话上的通知） */
+    public final static int MSG_SYSTEM_NOTIFY_TYPE = 110;
 }
